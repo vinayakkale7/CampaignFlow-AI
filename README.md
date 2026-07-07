@@ -226,6 +226,6 @@ AISSMS IOIT Pune
 
 GitHub: https://github.com/vinayakkale7
 
-LinkedIn: https://linkedin.com/in/vinayakkale
+LinkedIn: https://www.linkedin.com/in/vinayak-kale-0a06a82aa/
 
 ---
