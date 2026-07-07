@@ -1,0 +1,151 @@
+:root {
+  --paper: #FAFAFA;
+  --ink: #111827;
+  --marker: #E33D3D;
+  --teal: #0D9488;
+  --muted: #6B7280;
+  --line: #E5E7EB;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+html, body, #root {
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.display { font-family: 'Space Grotesk', sans-serif; }
+.mono { font-family: 'IBM Plex Mono', monospace; }
+
+/* Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 32% 68%;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--glass-shadow);
+  padding: 24px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  word-break: break-word;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-secondary:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* Sticky Panel */
+.sticky-panel {
+  position: sticky;
+  top: 24px;
+  max-width: 420px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .sticky-panel {
+    position: static;
+    max-width: 100%;
+  }
+}
+
+/* Input Fields */
+.saas-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s ease;
+}
+.saas-input:focus {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.1);
+}
+
+/* Primary Button */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.btn-primary:hover {
+  background: #000;
+}
+.btn-primary:disabled {
+  background: var(--muted);
+  cursor: not-allowed;
+}
+
+/* Utilities */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}

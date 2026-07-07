@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CampaignForge AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.23.9/babel.min.js"></script>
+<script src="https://unpkg.com/framer-motion@11.0.8/dist/framer-motion.js"></script>
+<script>
+  window.addEventListener('error', function(e) {
+    document.body.innerHTML += '<div style="color: red; padding: 20px; font-family: monospace; z-index: 9999; position: absolute; top: 0; background: white; width: 100%; border: 2px solid red;">' + 
+      '<b>JS Error:</b> ' + e.message + '<br>' + (e.filename || '') + ':' + (e.lineno || '') + 
+      '<pre>' + (e.error && e.error.stack ? e.error.stack : '') + '</pre></div>';
+  });
+  window.addEventListener('unhandledrejection', function(e) {
+    document.body.innerHTML += '<div style="color: red; padding: 20px; font-family: monospace; z-index: 9999; position: absolute; top: 0; background: white; width: 100%; border: 2px solid red;">' + 
+      '<b>Unhandled Promise Rejection:</b> ' + e.reason + '</div>';
+  });
+</script>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- Load React Components in dependency order -->
+<script type="text/babel" src="components/Slate.jsx?v=3"></script>
+<script type="text/babel" src="components/Field.jsx?v=3"></script>
+<script type="text/babel" src="components/BriefForm.jsx?v=3"></script>
+<script type="text/babel" src="components/CampaignSummary.jsx?v=3"></script>
+<script type="text/babel" src="components/AIAgentsStatus.jsx?v=3"></script>
+<script type="text/babel" src="components/ExecutionMetrics.jsx?v=3"></script>
+<script type="text/babel" src="components/WorkflowCanvas.jsx?v=3"></script>
+<script type="text/babel" src="components/CampaignProgress.jsx?v=3"></script>
+<script type="text/babel" src="components/AutomationTimeline.jsx?v=3"></script>
+<script type="text/babel" src="components/ExportPanel.jsx?v=3"></script>
+<script type="text/babel" src="components/VariantCard.jsx?v=3"></script>
+<script type="text/babel" src="components/AutomationLog.jsx?v=3"></script>
+<script type="text/babel" src="components/ResultTabs.jsx?v=3"></script>
+<script type="text/babel" src="components/Footer.jsx?v=3"></script>
+<script type="text/babel" src="App.jsx?v=3"></script>
+<script type="text/babel" src="main.jsx?v=3"></script>
+
+</body>
+</html>
