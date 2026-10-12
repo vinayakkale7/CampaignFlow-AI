@@ -1,87 +1,49 @@
 # CampaignFlow AI
 ### AI-Powered Marketing Automation Platform
 
-CampaignFlow AI is an AI-powered marketing automation platform that transforms a campaign brief into a structured marketing campaign using specialized AI agents. Built with React, FastAPI, Google Gemini 2.0 Flash, and ChromaDB, the platform coordinates research, marketing strategy, creative content generation, landing page copy, and persistent brand memory through an integrated workflow.
+CampaignFlow AI is an AI-powered marketing automation platform designed to transform a campaign brief into structured marketing deliverables using specialized AI agents. The platform combines large language models, multi-agent workflows, and vector-based memory to streamline research, marketing strategy, creative content generation, and landing page copy.
 
-The project demonstrates the application of **multi-agent AI orchestration, LLM-powered content generation, vector-based memory, and full-stack application development** to a real-world marketing automation use case.
-
----
-
-## Table of Contents
-
-- [Key Features](#key-features)
-- [System Architecture](#system-architecture)
-- [How It Works](#how-it-works)
-- [Technology Stack](#technology-stack)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Author](#author)
-
----
+Built using React, FastAPI, Google Gemini 2.0 Flash, and ChromaDB, CampaignFlow AI demonstrates how AI agents can collaborate to automate multiple stages of a marketing campaign.
 
 ## Key Features
 
-- **Multi-Agent AI Workflow:** Coordinates specialized agents to process different stages of a marketing campaign.
+- **Multi-Agent AI Workflow:** Coordinates specialized agents across different stages of campaign generation.
 - **AI-Powered Research:** Generates industry research, competitor analysis, and market insights.
-- **Marketing Content Generation:** Creates Google Ads copy, social media content, and email marketing copy.
-- **Creative Content Generation:** Produces campaign headlines, calls to action (CTAs), and AI image prompts.
-- **Landing Page Generation:** Generates structured landing page copy, including hero sections, feature descriptions, and CTAs.
-- **Persistent Brand Memory:** Uses ChromaDB vector storage to retain campaign-related knowledge and support contextual continuity.
-- **AI Guardrails:** Incorporates guardrails and hallucination-control mechanisms into the AI workflow.
-- **Campaign Export:** Supports exporting campaign outputs in PDF and JSON formats.
-- **Interactive Dashboard:** Provides a centralized interface for campaign briefs, agent status, campaign summaries, workflow progress, and execution metrics.
-
----
+- **Marketing Content Generation:** Creates advertising copy, social media content, and email marketing content.
+- **Creative Content Generation:** Generates campaign headlines, calls to action (CTAs), and AI image prompts.
+- **Landing Page Content:** Produces structured landing page copy, including hero sections, feature descriptions, and CTAs.
+- **Persistent Vector Memory:** Uses ChromaDB to store and retrieve campaign-related knowledge.
+- **AI Guardrails:** Incorporates mechanisms intended to improve output reliability and reduce hallucinations.
+- **Campaign Export:** Supports exporting generated campaign deliverables in PDF and JSON formats.
+- **Interactive Dashboard:** Provides a centralized interface for campaign briefs, agent status, workflow progress, and campaign outputs.
 
 ## System Architecture
 
-CampaignFlow AI follows a sequential multi-agent architecture in which each specialized agent contributes to the overall campaign generation process.
+CampaignFlow AI uses a multi-agent workflow coordinated by a FastAPI backend and accessed through a React frontend.
 
-```mermaid
-flowchart TD
-    A[Campaign Brief] --> B[Research Agent]
-    B --> C[Marketing Agent]
-    C --> D[Creative Agent]
-    D --> E[Landing Page Agent]
-    E --> F[Brand Memory - ChromaDB]
-    F --> G[Campaign Output]
-    G --> H[PDF Export]
-    G --> I[JSON Export]
+### Workflow
 
-    J[React Frontend] <--> K[FastAPI Backend]
-    K --> B
-    K --> C
-    K --> D
-    K --> E
-    F -. Context .-> B
-```
+1. **Campaign Brief:** Accepts the information needed to define the marketing campaign.
+2. **Research Agent:** Generates research findings and competitor insights.
+3. **Marketing Agent:** Develops advertising copy, social media content, and email marketing material.
+4. **Creative Agent:** Produces headlines, CTAs, and image prompts.
+5. **Landing Page Agent:** Generates structured landing page content.
+6. **Brand Memory:** Uses ChromaDB for vector-based storage and retrieval of campaign-related knowledge.
+7. **Campaign Export:** Makes campaign outputs available in PDF and JSON formats.
 
 ### Core Components
 
 | Component | Responsibility |
 |---|---|
-| React Frontend | Collects campaign briefs and presents generated campaign content. |
-| FastAPI Backend | Handles application requests and coordinates backend operations. |
-| Research Agent | Generates industry research and competitor insights. |
-| Marketing Agent | Produces advertising copy and promotional content. |
-| Creative Agent | Generates headlines, CTAs, and image prompts. |
-| Landing Page Agent | Creates structured landing page content. |
-| ChromaDB | Stores vector-based campaign and brand memory. |
-| Export Module | Produces downloadable PDF and JSON campaign outputs. |
-
----
-
-## How It Works
-
-1. **Campaign Brief:** Provide the campaign information required to define the marketing objective and context.
-2. **Research:** The Research Agent generates industry insights and competitor analysis.
-3. **Marketing:** The Marketing Agent develops advertising copy, social media posts, and email content.
-4. **Creative Generation:** The Creative Agent produces campaign headlines, CTAs, and image prompts.
-5. **Landing Page Generation:** The Landing Page Agent generates structured landing page content.
-6. **Brand Memory:** Campaign-related knowledge is stored in ChromaDB for persistent vector-based memory.
-7. **Export:** Generate campaign deliverables in PDF and JSON formats.
-
----
+| React Frontend | User interface for campaign creation and generated results |
+| FastAPI Backend | API layer and backend workflow coordination |
+| Research Agent | Industry research and competitor analysis |
+| Marketing Agent | Advertising and promotional content |
+| Creative Agent | Headlines, CTAs, and image prompts |
+| Landing Page Agent | Structured landing page copy |
+| ChromaDB | Vector storage and retrieval |
+| ReportLab | PDF generation |
+| JSON | Structured campaign output |
 
 ## Technology Stack
 
@@ -101,47 +63,46 @@ flowchart TD
 - Prompt Engineering
 - Multi-Agent Workflow
 
-### Vector Database and Memory
+### Vector Database
 - ChromaDB
 
 ### Export and Reporting
 - ReportLab
 - JSON
 
----
-
 ## Project Structure
 
 ```text
 CampaignFlow-AI/
-├── backend/
-│   ├── main.py
-│   ├── agent.py
-│   ├── automation.py
-│   ├── memory.py
-│   ├── prompts.py
-│   └── requirements.txt
-│
-├── frontend/
-│   ├── components/
-│   ├── App.jsx
-│   ├── main.jsx
-│   ├── styles.css
-│   └── index.html
-│
-└── README.md
+|
+|-- backend/
+|   |-- main.py
+|   |-- agent.py
+|   |-- automation.py
+|   |-- memory.py
+|   |-- prompts.py
+|   |-- requirements.txt
+|
+|-- frontend/
+|   |-- components/
+|   |-- App.jsx
+|   |-- main.jsx
+|   |-- styles.css
+|   |-- index.html
+|
+|-- README.md
 ```
-
----
 
 ## Getting Started
 
+Follow these steps to run CampaignFlow AI locally.
+
 ### Prerequisites
 
-- Python version compatible with the backend dependencies
+- Python compatible with the backend dependencies
 - pip
 - Git
-- A Google Gemini API key
+- Google Gemini API key
 
 ### 1. Clone the Repository
 
@@ -150,14 +111,21 @@ git clone https://github.com/vinayakkale7/CampaignFlow-AI.git
 cd CampaignFlow-AI
 ```
 
-### 2. Set Up the Backend
+### 2. Configure the Backend
+
+Navigate to the backend directory:
 
 ```bash
 cd backend
+```
+
+Create a virtual environment:
+
+```bash
 python -m venv venv
 ```
 
-Activate the virtual environment.
+Activate the environment.
 
 **Windows:**
 
@@ -171,38 +139,58 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-Install dependencies:
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Configure your Gemini API key according to the backend's existing configuration, then start the server:
+Configure your Google Gemini API key using the environment variable or configuration mechanism expected by the application. Do not commit API keys or secrets to GitHub.
+
+Start the FastAPI server:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-The backend will typically be available at `http://127.0.0.1:8000`.
+The backend is typically available at:
 
-Interactive API documentation: `http://127.0.0.1:8000/docs`
+`http://127.0.0.1:8000`
 
-### 3. Start the Frontend
+FastAPI interactive API documentation:
 
-Open a separate terminal from the repository root:
+`http://127.0.0.1:8000/docs`
+
+### 3. Run the Frontend
+
+Open a new terminal from the repository root:
 
 ```bash
 cd frontend
+```
+
+If the frontend consists of static files and does not require a separate build process, start a local HTTP server:
+
+```bash
 python -m http.server 5500
 ```
 
-Open `http://localhost:5500` in your browser.
+Open the application in your browser:
 
-Ensure that the frontend API configuration points to the running backend.
+`http://localhost:5500`
 
-> **Security:** Never commit your Gemini API key or other secrets to the repository.
+Ensure that the frontend API configuration points to the running FastAPI backend.
+
+**Note:** The commands above assume the repository uses the documented static frontend structure. Follow the actual frontend dependencies and configuration if additional setup is required.
+
+## Security
+
+- Keep API keys and credentials out of source control.
+- Store sensitive configuration in environment variables or an appropriate secrets manager.
+- Validate user inputs and handle API errors appropriately.
+- Configure CORS and API access according to your deployment environment.
 
 
 ---
 
-*CampaignFlow AI — Applying multi-agent AI to end-to-end marketing campaign generation.*
+*CampaignFlow AI - Applying multi-agent AI to marketing campaign generation.*
